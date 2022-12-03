@@ -7,7 +7,6 @@ import "./App.css";
 const client = new QueryClient();
 
 
-
 function App() {
   return (
     <QueryClientProvider client={client}>
