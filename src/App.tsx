@@ -1,16 +1,21 @@
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ThemeProvider } from "styled-components";
 
-import Dashboard from "@/pages/Dashboard";
+import Dashboard from "@/Pages/Dashboard";
+import Layout from "@/Common/Components/Layout";
+import theme from "./Styled/Common/theme";
 
-import "./App.css";
 
 const client = new QueryClient();
-
 
 function App() {
   return (
     <QueryClientProvider client={client}>
-      <Dashboard></Dashboard>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Dashboard></Dashboard>
+        </Layout>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
